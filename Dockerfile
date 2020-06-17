@@ -77,5 +77,7 @@ EXPOSE 80
 COPY src /var/www/miniblog
 RUN chown -R www-data:www-data /var/www/miniblog
 
+WORKDIR /var/www/miniblog
+RUN composer install
 # Set supervisor to manage container processes
 ENTRYPOINT ["/usr/bin/supervisord"]
