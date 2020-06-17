@@ -1,7 +1,7 @@
 version: '3.1'
 
 services:
-  mysql:  
+  mysql_broken_auth:  
     image: mysql:5.7
     container_name: mysql
     hostname: mysql
@@ -23,9 +23,9 @@ services:
     ports:
       - "31332:80"
     links:
-      - mysql
+      - mysql_broken_auth
     depends_on:
-      - mysql
+      - mysql_broken_auth
 
 volumes:
   mysql-data:
