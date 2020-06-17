@@ -22,6 +22,8 @@ $router->get('/login', function () use ($router) {
 });
 
 $router->get('/logout', function () use ($router) {
+    session_start();
+    session_destroy();
     return redirect('/');
 });
 
