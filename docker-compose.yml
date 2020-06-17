@@ -10,7 +10,7 @@ services:
       - MYSQL_DATABASE=cms
     restart: unless-stopped
     ports:
-      - 127.0.0.1:3306:3306
+      - 127.0.0.1:3307:3306
     volumes:
       - mysql-data:/var/lib/mysql
       - ./db:/docker-entrypoint-initdb.d
@@ -21,7 +21,7 @@ services:
     hostname: app
     restart: unless-stopped
     ports:
-      - "80:80"
+      - "31332:80"
     links:
       - mysql
     depends_on:
